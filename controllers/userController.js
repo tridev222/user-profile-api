@@ -38,7 +38,7 @@ const loginUser = async (req, res) => {
     }
 };
 
-// Get User Profile
+//---------------------------------Get User Profile-------------------------------
 const getUserProfile = async (req, res) => {
     try {
         const user = await User.findById(req.user.id).select("-password");
