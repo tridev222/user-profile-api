@@ -1,6 +1,6 @@
 ﻿const jwt = require("jsonwebtoken");
 
-// Middleware to protect routes
+// route protection so user only access there profiles
 const authMiddleware = (req, res, next) => {
     const token = req.header("Authorization");
 
@@ -10,7 +10,7 @@ const authMiddleware = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = decoded; // Attach user data to request object
+        req.user = decoded; 
         next();
     } catch (error) {
         res.status(401).json({ message: "Invalid or Expired Token" });
