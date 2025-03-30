@@ -50,4 +50,30 @@ const getUserProfile = async (req, res) => {
     }
 };
 
-module.exports = { registerUser, loginUser, getUserProfile };
+// ---------------------------------Update User Profile--------------------------------
+const updateUserProfile = async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id);
+        if (!user) return res.status(404).json({ message: "User not found" });
+
+        user.name = req.body.name || user.name;
+        user.email = req.body.email || user.email;
+        user.address = req.body.address || user.address;
+        user.bio = req.body.bio || user.bio;
+        user.profilePic = req.body.profilePic || user.profilePic;
+
+        if (req.body.password) {
+            user.password = req.body.password;
+        }
+
+        await user.save();
+        res.json({ message: "Profile updated successfully", user });
+    } catch (error) {
+        res.status(500).json({ message: "Server error", error });
+    }
+};
+
+
+
+
+module.exports = { registerUser, loginUser, getUserProfile , updateUserProfile};
