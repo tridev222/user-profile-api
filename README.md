@@ -4,23 +4,11 @@ A simple RESTful API for user profile management with authentication, built usin
 
 ---
 
-## 📌 Features
-✅ User Registration (with hashed password)  
-✅ Secure Authentication using JWT  
-✅ Profile Retrieval (protected route)  
-✅ Profile Update  
-✅ MongoDB Atlas for database storage  
-✅ Proper error handling  
+## 📌 Postman Collection  
+You can test the API using the Postman collection:  
+[🔗 Click here to access the collection](https://web.postman.co/workspace/My-Workspace~3c2eed30-8fee-49b5-8182-8ec9833bb067/collection/37189832-3bc1cb80-27bf-4683-af65-5c31a16a3f3e?action=share&source=copy-link&creator=37189832)  
 
----
-
-## 🔧 Tech Stack
-- **Backend**: Node.js, Express.js  
-- **Database**: MongoDB Atlas (via Mongoose)  
-- **Authentication**: JWT (jsonwebtoken)  
-- **Password Hashing**: bcryptjs  
-- **Environment Variables**: dotenv  
-- **CORS Handling**: cors  
+Import this collection into Postman and test the API endpoints easily.
 
 ---
 
